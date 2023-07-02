@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Product | QuickShop</title>
+
+        <!-- Font Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+            rel="stylesheet">
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                common: ["Rubik", "sans-serif"],
+              },
+            },
+          },
+        };
+      </script>
+
+        <!-- DaisyUI -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.7/dist/full.css"
+            rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- CSS File Link -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav>
+                <!-- Nav From DaisyUI (Responsive) -->
+                <div
+                    class="navbar bg-base-100 px-3 py-3 md:px-10 md:py-5 lg:px-20 lg:py-5">
+                    <div class="navbar-start">
+                        <div class="dropdown">
+                            <label tabindex="0" class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor"><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label>
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li
+                                    class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer transition ease-in-out delay-150 hover:scale-95 duration-300 active">Home</li>
+                                <li><a
+                                        class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300"
+                                        href="add_product.html">Add
+                                        Product</a></li>
+                            </ul>
+                        </div>
+                        <h2 class="text-xl md:text-3xl font-bold">Quick<span
+                                class="text-green-600">Shop</span></h2>
+                    </div>
+                    <div class="navbar-end hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1">
+                            <li><a
+                                    class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300"
+                                    href="index.html">Home</a></li>
+                            <li
+                                class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300 active">Add
+                                Product</li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Section -->
+        <main>
+            <section class="my-10 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold">Add A <span
+                        class="text-green-600">Product</span></h2>
+                <div
+                    class="lg:w-3/4 mx-5 lg:mx-auto grid lg:grid-cols-2 gap-10 my-10">
+                    <div class="flex justify-center items-center">
+                        <img class="mx-auto lg:p-5"
+                            src="/images/add_product.svg"
+                            alt="Contact Picture">
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div class="space-y-4  w-full">
+                            <h3 class="text-2xl">Enter Product Details</h3>
+                            <!-- Product Add Form -->
+                            <form
+                                onsubmit="addProductForm(event)"
+                                class="text-start space-y-3 border border-green-600 p-5 md:p-10 rounded-md">
+                                <!-- Product Name -->
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Product
+                                        Name</label>
+                                    <input type="text"
+                                        name="productName"
+                                        id="productName"
+                                        required
+                                        placeholder="Enter Product Name"
+                                        class="input input-bordered w-full" />
+                                </div>
+                                <!-- Product Photo URL -->
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Photo URL</label>
+                                    <input type="text"
+                                        name="productImage"
+                                        id="productImage"
+                                        required
+                                        placeholder="Enter Product Photo URL"
+                                        class="input input-bordered w-full" />
+                                </div>
+                                <!-- Product Price -->
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Product
+                                        Price</label>
+                                    <input type="number"
+                                        name="productPrice"
+                                        id="productPrice"
+                                        required
+                                        placeholder="Enter Product Price"
+                                        class="input input-bordered w-full" />
+                                </div>
+                                <!-- Unit In Stock -->
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Unit In
+                                        Stock</label>
+                                    <input type="number"
+                                        name="productUnitInStock"
+                                        id="productUnitInStock"
+                                        required
+                                        placeholder="Enter Unit In Stock"
+                                        class="input input-bordered w-full" />
+                                </div>
+
+                                <!-- Category Id -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="dropdown dropdown-bottom">
+                                            <label tabindex="0" class="btn m-1">Choose
+                                                Category</label>
+                                            <ul tabindex="0"
+                                                id="categoryDropDownField"
+                                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                <!-- Spinner -->
+                                                <span id="spinner-category"
+                                                    class="loading loading-spinner text-success hidden"></span>
+                                            </ul>
+                                        </div>
+                                        <input type="text"
+                                            name="productCategory"
+                                            id="productCategory"
+                                            class="input input-bordered w-full"
+                                            required
+                                            readonly>
+                                    </div>
+                                </div>
+                                <!-- Supplier Id -->
+                                <div class="space-y-2">
+                                    <div class="flex items-center">
+                                        <div class="dropdown dropdown-bottom">
+                                            <label tabindex="0" class="btn m-1">Choose
+                                                Supplier</label>
+                                            <ul tabindex="0"
+                                                id="supplierDropDownField"
+                                                class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                <!-- Spinner -->
+                                                <span id="spinner-supplier"
+                                                    class="loading loading-spinner text-success hidden"></span>
+                                            </ul>
+                                        </div>
+                                        <input type="text"
+                                            name="productSupplier"
+                                            id="productSupplier"
+                                            required
+                                            class="input input-bordered w-full"
+                                            readonly>
+                                    </div>
+                                </div>
+                                <!-- Product Description -->
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Product
+                                        Description</label>
+                                    <textarea
+                                        name="productDescription"
+                                        id="productDescription"
+                                        required
+                                        placeholder="Enter Product Description"
+                                        class="textarea textarea-bordered textarea-lg w-full"></textarea>
+                                </div>
+
+                                <!-- Error Message Field -->
+                                <p
+                                    id="errorMessageField"
+                                    class="p-1 text-center border border-red-600 rounded-md hidden"><span
+                                        class="text-red-600 mr-2">&#10006;</span>Please
+                                    Fill In All Fields.</p>
+                                <p
+                                    id="notFoundErrorMessageField"
+                                    class="p-1 text-center border border-red-600 rounded-md hidden"><span
+                                        class="text-red-600 mr-2">&#10006;</span>Something
+                                    Went Wrong.</p>
+                                <p
+                                    id="successMessageField"
+                                    class="p-1 text-center border border-green-600 rounded-md hidden"><span
+                                        class="text-green-600 mr-2">&#9989;</span>Product
+                                    Updated Successfully.</p>
+
+                                <input type="submit" value="Submit"
+                                    class="bg-green-600 text-white px-3 py-2 rounded-md font-semibold tracking-wide transition ease-in-out delay-150 hover:scale-95 duration-300 w-full cursor-pointer">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-5 bg-green-600 text-white font-medium">
+            <p>Copyright © 2023 - All right reserved by QuickShop Ltd.</p>
+        </footer>
+        <script src="js/add.js"></script>
+    </body>
+</html>

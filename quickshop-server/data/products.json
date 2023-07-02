@@ -1,0 +1,29 @@
+[
+  {
+    "name": "iPhone 12",
+    "image": "https://i.ibb.co/3T49nYM/product-one.jpg",
+    "price": "999.00",
+    "unitInStock": 50,
+    "supplier": "Apple",
+    "category": "Phone",
+    "description": "The iPhone 12 is the latest flagship smartphone from Apple, featuring a powerful A14 Bionic chip and a stunning Super Retina XDR display."
+  },
+  {
+    "name": "Samsung Ultra",
+    "image": "https://i.ibb.co/kB5RykX/product-two.jpg",
+    "price": "129.00",
+    "unitInStock": 20,
+    "supplier": "Samsung",
+    "category": "Speaker",
+    "description": "The Nike Air Max is a popular athletic shoe known for its comfortable cushioning and stylish design, suitable for running and casual wear."
+  },
+  {
+    "name": "Sony PlayStation 5",
+    "image": "https://i.ibb.co/kB5RykX/product-two.jpg",
+    "price": "499.00",
+    "unitInStock": 10,
+    "supplier": "Sony",
+    "category": "Headphone",
+    "description": "The Sony PlayStation 5 is the next-generation gaming console, offering immersive gaming experiences with its powerful hardware and advanced features."
+  }
+]

@@ -1,0 +1,22 @@
+body{
+    font-family: 'Tenor Sans', sans-serif;
+}
+
+/* For Menu */
+.active{
+    text-decoration: underline;
+    color: #16a34a;
+}
+
+/* Hero */
+.banner {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.716),
+        rgba(0, 0, 0, 0.404)
+      ),
+      url("/images/banner.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

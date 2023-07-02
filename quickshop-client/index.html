@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home | QuickShop</title>
+
+        <!-- Font Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap"
+            rel="stylesheet">
+
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  fontFamily: {
+                    common: ["Rubik", "sans-serif"],
+                  },
+                },
+              },
+            };
+          </script>
+
+        <!-- DaisyUI -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.7/dist/full.css"
+            rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <!-- CSS File Link -->
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- Header -->
+        <header>
+            <!-- Navbar -->
+            <nav>
+                <!-- Nav From DaisyUI (Responsive) -->
+                <div
+                    class="navbar bg-base-100 px-3 py-3 md:px-10 md:py-5 lg:px-20 lg:py-5">
+                    <div class="navbar-start">
+                        <div class="dropdown">
+                            <label tabindex="0" class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor"><path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                            </label>
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                                <li
+                                    class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer transition ease-in-out delay-150 hover:scale-95 duration-300 active">Home</li>
+                                <li><a
+                                        class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300"
+                                        href="add_product.html">Add
+                                        Product</a></li>
+                            </ul>
+                        </div>
+                        <h2 class="text-xl md:text-3xl font-bold">Quick<span
+                                class="text-green-600">Shop</span></h2>
+                    </div>
+                    <div class="navbar-end hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1">
+                            <li
+                                class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300 active">Home</li>
+                            <li><a
+                                    class="ms-3 px-3 py-2 hover:bg-green-600 hover:text-white rounded-lg cursor-pointer text-base transition ease-in-out delay-150 hover:scale-95 duration-300"
+                                    href="add_product.html">Add
+                                    Product</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Hero -->
+            <div transition ease-in-out delay-150 hover:scale-95 duration-300
+                class="h-screen banner flex justify-center items-center text-white md:px-10 px-5">
+                <div class="text-center space-y-3">
+                    <h2 class="text-2xl md:text-3xl font-bold">Simplify Your
+                        <span class="text-green-600">Shopping</span> Experience</h2>
+                    <p class="text-base md:text-lg md:w-4/6 mx-auto">Experience
+                        the Ultimate
+                        Shopping Destination - QuickShop: Your One-Stop Solution
+                        for Effortless Online Shopping, Exclusive Deals, Trendy
+                        Products, and Exceptional Customer Service.</p>
+                    <button
+                        class="bg-green-600 text-white px-3 py-2 rounded-md font-semibold tracking-wide transition ease-in-out delay-150 hover:scale-95 duration-300">Shop
+                        Now</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Section -->
+        <main>
+            <!-- All Product Section -->
+            <section class="my-20 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold">Our <span
+                        class="text-green-600">Products</span></h2>
+                <!-- Error Message Field -->
+                <p
+                    id="notFoundErrorMessageField"
+                    class="my-10 p-1 text-center border border-red-600 rounded-md hidden w-fit mx-auto"><span
+                        class="text-red-600 mr-2">&#10006;</span>No Product
+                    Added.</p>
+                <!-- Spinner -->
+                <span id="spinner" class="loading loading-spinner text-success my-10 hidden"></span>
+                <!-- Product Container -->
+                <div
+                    id="product-container"
+                    class="lg:w-3/4 mx-5 lg:mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
+                    <!-- Card 1 -->
+                    <!-- <div
+                        class="p-5 border border-green-600 rounded-md shadow-lg space-y-3">
+                        <img class="rounded-md mx-auto"
+                            src="https://i.ibb.co/2MK2HLL/class-1.png"
+                            alt="Product Image">
+                        <div class="space-y-2">
+                            <h3 class="text-xl md:text-2xl font-bold">Product
+                                Name</h3>
+                            <p class="text-base lg:text-lg">Price: <span
+                                    class="text-green-600 font-semibold">$104</span></p>
+                        </div>
+                        <div
+                            class="block lg:flex lg:justify-between space-y-2 lg:space-y-0">
+                            <button onclick="viewProductDetails('product_id')"
+                                class="bg-green-600 text-white px-3 py-2 rounded-md font-semibold tracking-wide transition ease-in-out delay-150 hover:scale-95 duration-300 block lg:inline w-full lg:w-auto">View
+                                Details</button>
+                            <button onclick="updateProductDetails('product_id')"
+                                class="bg-green-600 text-white px-3 py-2 rounded-md font-semibold tracking-wide transition ease-in-out delay-150 hover:scale-95 duration-300 block lg:inline w-full lg:w-auto">Update</button>
+                        </div>
+                    </div> -->
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="my-20 text-center">
+                <h2 class="text-2xl md:text-3xl font-bold">Contact <span
+                        class="text-green-600">Us</span></h2>
+                <div
+                    class="lg:w-3/4 mx-5 lg:mx-auto grid lg:grid-cols-2 gap-10 my-10">
+                    <div class="flex justify-center items-center">
+                        <img class="mx-auto lg:p-5" src="/images/contact.svg"
+                            alt="Contact Picture">
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <div class="space-y-4">
+                            <h3 class="text-2xl">Don&apos;t Hesitate to contact
+                                with us</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Porro, adipisci. Neque quas
+                                obcaecati labore distinctio aspernatur, cumque
+                                ullam sapiente accusamus deserunt? Repudiandae
+                                asperiores, quos blanditiis ea dolores modi
+                                excepturi in?</p>
+                            <!-- Contact Form -->
+                            <form
+                                class="text-start space-y-3 border border-green-600 p-5 md:p-10 rounded-md ">
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Your
+                                        Email Address</label>
+                                    <input type="text"
+                                        placeholder="Your Email Address"
+                                        class="input input-bordered w-full max-w-xs" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="block font-semibold">Your
+                                        Message</label>
+                                    <textarea placeholder="Message"
+                                        class="textarea textarea-bordered textarea-lg w-full max-w-xs"></textarea>
+                                </div>
+                                <input type="button" value="Submit"
+                                    class="bg-green-600 text-white px-3 py-2 rounded-md font-semibold tracking-wide transition ease-in-out delay-150 hover:scale-95 duration-300 w-full">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="text-center py-5 bg-green-600 text-white font-medium">
+            <p>Copyright © 2023 - All right reserved by QuickShop Ltd.</p>
+        </footer>
+
+        <script src="js/app.js"></script>
+    </body>
+</html>
