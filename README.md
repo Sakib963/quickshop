@@ -11,7 +11,7 @@ Before running this application, make sure you have the following installed in y
 ## Setup
 1. Clone the Repository
 ```bash
-git clone https://github.com/
+git clone https://github.com/Sakib963/quickshop.git
 ```
 
 2. Open in Visual Studio Code
